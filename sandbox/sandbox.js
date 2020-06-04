@@ -5,7 +5,7 @@ const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 const numerics = '0123456789';
 
-const specialCharacters = ' !"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~';
+const specialCharacters = '!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~';
 
 console.log(lowercaseLetters);
 console.log(uppercaseLetters);
@@ -51,16 +51,24 @@ console.log(passwordLength);
 
 function getCharSet() {
     if (includeLowercase === true) {
+        finishedPassword += randomLowercaseLetter;
         charSet += lowercaseLetters;
+        passwordLength -= 1;
     }
     if (includeUppercase === true) {
+        finishedPassword += randomUppercaseLetter;
         charSet += uppercaseLetters;
+        passwordLength -= 1;
     }
     if (includeNumeric === true) {
+        finishedPassword += randomNumeric;
         charSet += numerics;
+        passwordLength -= 1;
     }
     if (includeSpecial === true) {
+        finishedPassword += randomSpecialCharacter;
         charSet+= specialCharacters;
+        passwordLength -= 1;
     }
     return charSet;
 };
@@ -73,4 +81,4 @@ for(i = 0; i < passwordLength; i++) {
     finishedPassword += passwordChar;
 };
 
-console.log(finishedPassword);
+alert(finishedPassword);

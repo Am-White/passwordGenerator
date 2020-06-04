@@ -6,9 +6,7 @@ Application that randomly generates passwords depending on user's desired length
 
 ## Description
 
-Random Password Generator is a web app that creates random passwords for user's convenience. The user selects whether to include certain character sets (lowercase letters, uppercase letters, numeric characters, and/or special characters) as possible characters in the password, and selects the desired length for the password. Guarantees at least one of each desired character type in the returned password. Password can be any length, but in current development to limit password length to between 8 and 128 characters.
-
-Application uses confirm, prompt, and alert methods in its current version, but in development to use DOM manipulation for a more user interactive experience. This will also allow user to return a random password with every push of a button, instead of having to refresh to restart the process.
+Random Password Generator is a web app that creates random passwords for user's convenience. The user selects whether to include certain character sets (lowercase letters, uppercase letters, numeric characters, and/or special characters) as possible characters in the password, and selects the desired length for the password between 8 and 128 characters. Guarantees at least one of each desired character type in the returned password.
 
 ---
 

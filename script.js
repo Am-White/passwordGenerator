@@ -58,12 +58,7 @@ function getCharSet(lower, upper, num, spec) {
         charSet+= specialCharacters;
         passwordLength -= 1;
     }
-/*     else {
-        alert('You must select at least 1 character type. Please start over.');
-        userPreference();
-    }     */
     generatePassword(charSet, finishedPassword);
-    console.log(charSet);
 };
 // Function for looping through possible
 generatePassword = (x, y) => {

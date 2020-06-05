@@ -105,7 +105,7 @@ const userPreference = function() {
 generateBtn.addEventListener("click", userPreference);
 
 // Function for looping through possible
-const generatePassword = function(x, y) {
+generatePassword = (x, y) => {
     for(i = 0; i < passwordLength; i++) {
         let passwordChar = x[Math.floor(Math.random()*x.length)];
         y += passwordChar;

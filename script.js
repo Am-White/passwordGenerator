@@ -11,7 +11,6 @@ const specialCharacters = '!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~';
 const userPreference = function() {
     alert('Welcome to password generator.');
     includeLowercase = confirm('Click "OK" if you would like your password to contain lowercase letters.');
-    console.log(includeLowercase);
     includeUppercase = confirm('Click "OK" if you would like your password to contain uppercase letters.');
     includeNumeric = confirm('Click "OK" if you would like your password to include numeric characters.');
     includeSpecial = confirm('Click "OK" if you would like your password to include special characters.');

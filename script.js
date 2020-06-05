@@ -11,95 +11,46 @@ const randomUppercaseLetter = uppercaseLetters[Math.floor(Math.random()*uppercas
 const randomNumeric = numerics[Math.floor(Math.random()*numerics.length)];
 const randomSpecialCharacter = specialCharacters[Math.floor(Math.random()*specialCharacters.length)];
 
-
-// Initializing empty strings to use later
-
-
-// Variables that need defining from user input on DOM elements and button push
-/* let includeLowercase
-let includeUppercase
-let includeNumeric
-let includeSpecial
-let passwordLength
-console.log(includeLowercase);
-console.log(includeUppercase);
-console.log(includeNumeric);
-console.log(includeSpecial); */
-
-// Write password to the #password input
-/* const writePassword = function() {
-    let password = generatePassword();
-    const passwordText = document.querySelector("#password");
-    
-    passwordText.value = password;
-}
-*/
-/* Nested this function in userPreference for now
-
-function getCharSet() {
-    if (includeLowercase === true) {
-        finishedPassword += randomLowercaseLetter;
-        charSet += lowercaseLetters;
-        passwordLength -= 1;
-    }
-    if (includeUppercase === true) {
-        finishedPassword += randomUppercaseLetter;
-        charSet += uppercaseLetters;
-        passwordLength -= 1;
-    }
-    if (includeNumeric === true) {
-        finishedPassword += randomNumeric;
-        charSet += numerics;
-        passwordLength -= 1;
-    }
-    if (includeSpecial === true) {
-        finishedPassword += randomSpecialCharacter;
-        charSet+= specialCharacters;
-        passwordLength -= 1;
-    }
-    
-    return charSet;
-    console.log(charSet);
-}; */
-
 // Function for user prompts-- nested function for getting charSet in userPreference for now
 const userPreference = function() {
     alert('Welcome to password generator.');
-    includeLowercase = confirm('Would you like your password to contain lowercase letters?');
-    includeUppercase = confirm('Would you like your password to contain uppercase letters?');
-    includeNumeric = confirm('Would you like your password to include numeric characters?');
-    includeSpecial = confirm('Would you like your password to include special characters?');
-    passwordLength = prompt('How long would you like your password to be? Enter a number from 8 to 128.');
+    includeLowercase = confirm('Click "OK" if you would like your password to contain lowercase letters.');
+    includeUppercase = confirm('Click "OK" if you would like your password to contain uppercase letters.');
+    includeNumeric = confirm('Click "OK" if you would like your password to include numeric characters.');
+    includeSpecial = confirm('Click "OK" if you would like your password to include special characters.');
+    passwordLength = prompt('How long would you like your password to be? Enter a number from 8 to 128 and click "OK".');
+    getCharSet(includeLowercase, includeUppercase, includeNumeric, includeSpecial);
+};
+
+function getCharSet(lower, upper, num, spec) {
     let charSet = '';
     let finishedPassword = '';
-    if (includeLowercase === true) {
+    if (lower === true) {
         finishedPassword += randomLowercaseLetter;
         charSet += lowercaseLetters;
         passwordLength -= 1;
     }
-    if (includeUppercase === true) {
+    if (upper === true) {
         finishedPassword += randomUppercaseLetter;
         charSet += uppercaseLetters;
         passwordLength -= 1;
     }
-    if (includeNumeric === true) {
+    if (num === true) {
         finishedPassword += randomNumeric;
         charSet += numerics;
         passwordLength -= 1;
     }
-    if (includeSpecial === true) {
+    if (spec === true) {
         finishedPassword += randomSpecialCharacter;
         charSet+= specialCharacters;
         passwordLength -= 1;
     }
-    console.log(includeLowercase);
-    console.log(includeUppercase);
-    console.log(includeNumeric);
-    console.log(includeSpecial);
-    // Callback to generatePassword function defined below
-    console.log(charSet);
+    
     generatePassword(charSet, finishedPassword);
+    console.log(charSet);
 };
+
+
 
 // Event listener on "Generate Password" button that initiates process of user selecting preferences for password
 generateBtn.addEventListener("click", userPreference);

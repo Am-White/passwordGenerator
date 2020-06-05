@@ -13,15 +13,18 @@ const randomSpecialCharacter = specialCharacters[Math.floor(Math.random()*specia
 
 
 // Initializing empty strings to use later
-let charSet = '';
-let finishedPassword = '';
+
 
 // Variables that need defining from user input on DOM elements and button push
-let includeLowercase
+/* let includeLowercase
 let includeUppercase
 let includeNumeric
 let includeSpecial
 let passwordLength
+console.log(includeLowercase);
+console.log(includeUppercase);
+console.log(includeNumeric);
+console.log(includeSpecial); */
 
 // Write password to the #password input
 /* const writePassword = function() {
@@ -54,6 +57,7 @@ function getCharSet() {
         charSet+= specialCharacters;
         passwordLength -= 1;
     }
+    
     return charSet;
     console.log(charSet);
 }; */
@@ -66,6 +70,8 @@ const userPreference = function() {
     includeNumeric = confirm('Would you like your password to include numeric characters?');
     includeSpecial = confirm('Would you like your password to include special characters?');
     passwordLength = prompt('How long would you like your password to be? Enter a number from 8 to 128.');
+    let charSet = '';
+    let finishedPassword = '';
     if (includeLowercase === true) {
         finishedPassword += randomLowercaseLetter;
         charSet += lowercaseLetters;
@@ -86,20 +92,25 @@ const userPreference = function() {
         charSet+= specialCharacters;
         passwordLength -= 1;
     }
+    console.log(includeLowercase);
+    console.log(includeUppercase);
+    console.log(includeNumeric);
+    console.log(includeSpecial);
     // Callback to generatePassword function defined below
-    generatePassword(charSet);
+    console.log(charSet);
+    generatePassword(charSet, finishedPassword);
 };
 
 // Event listener on "Generate Password" button that initiates process of user selecting preferences for password
 generateBtn.addEventListener("click", userPreference);
 
 // Function for looping through possible
-const generatePassword = function(x) {
+const generatePassword = function(x, y) {
     for(i = 0; i < passwordLength; i++) {
         let passwordChar = x[Math.floor(Math.random()*x.length)];
-        finishedPassword += passwordChar;
+        y += passwordChar;
     };
-    passwordText.innerHTML = finishedPassword;
+    passwordText.innerHTML = y;
 };
 
 

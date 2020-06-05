@@ -24,13 +24,31 @@ Application uses confirm, prompt, and alert methods in its current version, but 
 
 ## Installation
 
+1. Clone the Github Repository [here](https://github.com/jameygronewald/passwordGenerator).
+2. Open index.html in browser.
+
 ---
 
 ## Usage
+* Visit the deployed app: [Jamey Gronewald Portfolio](https://jameygronewald.github.io/passwordGenerator/)
+    1. Click "Generate Password" button to begin selecting preferences for randomly generated password
+    2. Follow the prompts given by the app to select desired character sets and length of randomly generated password
+    3. Watch as randomly generated password is displayed. Copy password to clipboard for personal use if desired.
+    4. Click "Generate Password" button again and again to generate as many passwords as desired.
+
+
+* Visit Github to track changes that were made or to clone the repo: [Github Repo](https://github.com/jameygronewald/passwordGenerator).
+
+
 
 ---
 
 ## Images
+
+![App On Window Load](assets/demoImages/appOnload.png)
+![User Confirm](assets/demoImages/userConfirm.png)
+![User Prompt](assets/demoImages/userPrompt.png)
+![App with Generated Password](assets/demoImages/passwordGenerated.png)
 
 ---
 

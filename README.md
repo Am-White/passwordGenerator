@@ -53,7 +53,12 @@ Users can create as many random passwords as desired at the push of a button. Th
 ---
 
 ## Credits
-I, Jamey Gronewald, was the sole creator of this project.
+Thanks to GT Coding Boot Camp for providing code for HTML and CSS page design; JavaScript was written by me, Jamey Gronewald.
+
+---
+
+## Collaborators
+I, Jamey Gronewald, was the sole collaborator on this project.
 
 ---
 

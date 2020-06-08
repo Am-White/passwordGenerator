@@ -19,9 +19,9 @@ const userPreference = function() {
         userPreference();
     }
     else {
-    passwordLength = prompt('How long would you like your password to be? Enter a number from 8 to 128 and click "OK".');
+        passwordLength = prompt('How long would you like your password to be? Enter a number from 8 to 128 and click "OK".');
         if (passwordLength < 8 || passwordLength > 128) {
-            alert('Invalid password length. Please start over and enter a number from 8 to 128 and click "OK".');
+            alert('Invalid password length. Please start over and enter a number from 8 to 128.');
             userPreference();
         }
         else {
@@ -66,6 +66,10 @@ generatePassword = (x, y) => {
     for(i = 0; i < passwordLength; i++) {
         let passwordChar = x[Math.floor(Math.random()*x.length)];
         y += passwordChar;
+    };
+    if (y.length < 8) {
+        alert ('Invalid input. Please select a length between 8 and 128 characters.')
+        return userPreference();
     };
     passwordText.innerHTML = y;
 };

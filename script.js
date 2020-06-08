@@ -1,6 +1,6 @@
 // Initializing global variables; the first two allow me to write JavaScript that interacts with those DOM elements; the next 4 are strings that will be used to define the potential characters used in the randomly generated password
-const generateBtn = document.querySelector("#generate");
-const passwordText = document.querySelector("#password");
+const startButton = document.querySelector("#generate");
+const pwText = document.querySelector("#password");
 
 const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
 const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -21,6 +21,10 @@ const userPreference = function() {
     else {
         passwordLength = prompt('How long would you like your password to be? Enter a number from 8 to 128 and click "OK".');
         if (passwordLength < 8 || passwordLength > 128) {
+            alert('Invalid password length. Please start over and enter a number from 8 to 128.');
+            userPreference();
+        }
+        else if (!Number.isInteger(Number(passwordLength))) {
             alert('Invalid password length. Please start over and enter a number from 8 to 128.');
             userPreference();
         }
@@ -63,16 +67,14 @@ function getCharSet(lower, upper, num, spec) {
 
 // Function that chooses a random index from the completed charSet string that was formulated in the getCharSet function and adds it to the finishedPassword-- it then iterates through until the passwordLength reaches desired length and displays the finishedPassword to the DOM for the user to see
 generatePassword = (x, y) => {
-    for(i = 0; i < passwordLength; i++) {
+    let i = 0;
+    while(i < passwordLength) {
         let passwordChar = x[Math.floor(Math.random()*x.length)];
         y += passwordChar;
+        i++
     };
-    if (y.length < 8) {
-        alert ('Invalid input. Please select a length between 8 and 128 characters.')
-        return userPreference();
-    };
-    passwordText.innerHTML = y;
+    pwText.innerHTML = y;
 };
 
 // Event listener on "Generate Password" button that initiates process of user selecting preferences for password when button is clicked; must be after userPreference function so that function is defined when the event listener calls on it
-generateBtn.addEventListener("click", userPreference);
+startButton.addEventListener("click", userPreference);

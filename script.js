@@ -1,6 +1,6 @@
 // Initializing global variables; the first two allow me to write JavaScript that interacts with those DOM elements; the next 4 are strings that will be used to define the potential characters used in the randomly generated password
-const generateBtn = document.querySelector("#generate");
-const passwordText = document.querySelector("#password");
+const startButton = document.querySelector("#generate");
+const pwText = document.querySelector("#password");
 
 const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
 const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -67,12 +67,14 @@ function getCharSet(lower, upper, num, spec) {
 
 // Function that chooses a random index from the completed charSet string that was formulated in the getCharSet function and adds it to the finishedPassword-- it then iterates through until the passwordLength reaches desired length and displays the finishedPassword to the DOM for the user to see
 generatePassword = (x, y) => {
-    for(i = 0; i < passwordLength; i++) {
+    let i = 0;
+    while(i < passwordLength) {
         let passwordChar = x[Math.floor(Math.random()*x.length)];
         y += passwordChar;
+        i++
     };
-    passwordText.innerHTML = y;
+    pwText.innerHTML = y;
 };
 
 // Event listener on "Generate Password" button that initiates process of user selecting preferences for password when button is clicked; must be after userPreference function so that function is defined when the event listener calls on it
-generateBtn.addEventListener("click", userPreference);
+startButton.addEventListener("click", userPreference);

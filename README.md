@@ -53,7 +53,7 @@ Users can create as many random passwords as desired at the push of a button. Th
 ---
 
 ## Credits
-Thanks to GT Coding Boot Camp for providing code for HTML and CSS page design; JavaScript was written by me, Jamey Gronewald.
+Thanks to GT Coding Boot Camp for providing code for HTML and CSS page design. Thanks to Jared Porter for line of code to catch both NaN passwordLength inputs and decimal inputs. All other JavaScript was written by me, Jamey Gronewald.
 
 ---
 

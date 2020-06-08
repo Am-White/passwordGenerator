@@ -54,6 +54,10 @@ header {
   min-height: 100px;
 }
 
+h4 {
+  text-align: center;
+}
+
 .card-footer {
   text-align: center;
 }
@@ -128,10 +132,31 @@ button[disabled] {
   #password {
     font-size: 1rem;
   }
+  
+  .card-header {
+    text-align: center;
+  }
+  
+  h4 {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
+  }
+  
+  .wrapper {
+    padding: 0;
+  }
+  
+  .card {
+    margin: 0;
+    width: 100%;
+  }
+  
+  h4 {
+    font-size: 12px;
   }
 }

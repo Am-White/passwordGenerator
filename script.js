@@ -24,6 +24,10 @@ const userPreference = function() {
             alert('Invalid password length. Please start over and enter a number from 8 to 128.');
             userPreference();
         }
+        else if (!Number.isInteger(Number(passwordLength))) {
+            alert('Invalid password length. Please start over and enter a number from 8 to 128.');
+            userPreference();
+        }
         else {
             getCharSet(includeLowercase, includeUppercase, includeNumeric, includeSpecial);
         }
@@ -66,10 +70,6 @@ generatePassword = (x, y) => {
     for(i = 0; i < passwordLength; i++) {
         let passwordChar = x[Math.floor(Math.random()*x.length)];
         y += passwordChar;
-    };
-    if (y.length < 8) {
-        alert ('Invalid input. Please select a length between 8 and 128 characters.')
-        return userPreference();
     };
     passwordText.innerHTML = y;
 };

@@ -30,7 +30,7 @@ Users can create as many random passwords as desired at the push of a button. Th
 ---
 
 ## Usage
-* Visit the deployed app: [Jamey Gronewald Portfolio](https://jameygronewald.github.io/passwordGenerator/)
+* Visit the deployed app: [Password Generator](https://jameygronewald.github.io/passwordGenerator/)
     1. Click "Generate Password" button to begin selecting preferences for randomly generated password
     2. Follow the prompts given by the app to select desired character sets and length of randomly generated password
     3. Watch as randomly generated password is displayed. Copy password to clipboard for personal use if desired.
